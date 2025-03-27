@@ -18,7 +18,7 @@ cosign version
 ```
 echo "hello sigstore" > myfile.txt
 ```
-### Create a signature
+### Create a signature (keyless) - using Google
 ```
 cosign sign xxradar/hackon
 ```
@@ -50,6 +50,12 @@ Pushing signature to: index.docker.io/xxradar/hackon
 cosign verify \
     --certificate-identity philippe.bogaerts@radarsec.com  \
     --certificate-oidc-issuer https://accounts.google.com \
+    xxradar/hackon
+```
+```
+cosign verify \
+    --certificate-identity philippe.bogaerts@radarhack.com  \
+    --certificate-oidc-issuer https://github.com/login/oauth \
     xxradar/hackon
 ```
 ```

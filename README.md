@@ -140,3 +140,10 @@ ls
 ```
 cosign.bundle	myfile.txt
 ```
+### Verify the file (blob)
+```
+cosign verify-blob myfile.txt \
+    --bundle cosign.bundle \
+    --certificate-identity philippe.bogaerts@radarhack.com  \
+    --certificate-oidc-issuer https://github.com/login/oauth
+```

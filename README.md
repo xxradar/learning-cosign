@@ -14,9 +14,11 @@ cosign version
 ```
 
 ## Keyless example
+### Create a sample file `myfile.txt`
 ```
 echo "hello sigstore" > myfile.txt
 ```
+### Create a signature
 ```
 cosign sign-blob myfile.txt
 ```
@@ -57,4 +59,11 @@ Iwol/krgIAQL4SoWwjYyAjANu2emyLAmPWktjTV2t1He0bJLOu9DLgT7BtiwDH1z
 
 tlog entry created with index: 189081059
 MEYCIQCi/SlkHgEGS4d7qO3Djm4K1H6pvxe3/bmBBB+D6mW5fAIhAM0HTxuWlifm3yzsGklVLTxjNEiuc+bFSoHahSYUu020
+```
+### Verify the file (keyless)
+```
+cosign verify \
+  --certificate-identity "philippe.bogaerts@radarhack.com" \
+  --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+  myfile.txt
 ```

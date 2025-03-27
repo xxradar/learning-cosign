@@ -43,3 +43,13 @@ oras push registry-1.docker.io/xxradar/hackon:cosign-public-key \
 ```
 oras pull registry-1.docker.io/xxradar/hackon:cosign-public-key
 ```
+## Getting the SBOM
+```
+cosign download attestation \
+ xxradar/hackon:latest | \
+ jq -r .payload | base64 -d \
+ | jq .predicate
+```
+```
+cosign verify-attestation --key cosign.pub xxradar/hackon:latest
+```

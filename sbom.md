@@ -32,3 +32,14 @@ or
 ```
 cosign attest -predicate result.spdx -key cosign.key xxradar/hackon:latest
 ```
+## Storing the public key in Docker registry
+```
+oras push registry-1.docker.io/xxradar/hackon:cosign-public-key \
+  --artifact-type application/vnd.cncf.notary.cosign-public-key \
+  cosign.pub:application/vnd.cncf.notary.cosign-public-key
+```
+## Pulling the public key from the Docker registry
+
+```
+oras pull registry-1.docker.io/xxradar/hackon:cosign-public-key
+```

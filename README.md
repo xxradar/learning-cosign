@@ -71,7 +71,9 @@ The following checks were performed on each of these signatures:
 ```
 echo "hello sigstore" > myfile.txt
 ```
-```cosign sign-blob myfile.txt --bundle cosign.bundle
+```
+cosign sign-blob myfile.txt --bundle cosign.bundle
+```
 ```
 Using payload from: myfile.txt
 Generating ephemeral keys...
@@ -130,7 +132,6 @@ KmtvUUp1gHJxCI6PWvKNR7vC
 
 Wrote bundle to file cosign.bundle
 MEUCIERiPK/EKBdrdt9DkjWps89lQFsP6hsckvNubEbjI7rlAiEA7af/uA/p3UXndc8qF8gXpnOa3bvyWXPdBsaPz2t8g9s=
-```
 ```
 ### Inspect `cosign.bundle`
 ```

@@ -1,0 +1,14 @@
+# SBOM
+## Creating an SBOM for a container image
+```
+trivy image --format spdx --output result.spdx xxradar/hackon:latest
+```
+## Attaching the SBOM
+```
+cosign attach sbom --sbom result.spdx xxradar/hackon:latest
+```
+```
+WARNING: SBOM attachments are deprecated and support will be removed in a Cosign release soon after 2024-02-22 (see https://github.com/sigstore/cosign/issues/2755). Instead, please use SBOM attestations.
+WARNING: Attaching SBOMs this way does not sign them. To sign them, use 'cosign attest --predicate result.spdx --key <key path>'.
+Uploading SBOM file for [index.docker.io/xxradar/hackon:latest] to [index.docker.io/xxradar/hackon:sha256-19aaac925c3f3d3a9953d8bf0e179bf2961852f1d4e6872b59a8ef979f25838e.sbom] with mediaType [text/spdx].
+```

@@ -28,3 +28,7 @@ cosign sign --key cosign.key xxradar/hackon:sha256-19aaac925c3f3d3a9953d8bf0e179
 ```
 cosign verify --key cosign.pub xxradar/hackon:sha256-19aaac925c3f3d3a9953d8bf0e179bf2961852f1d4e6872b59a8ef979f25838e.sbom
 ```
+or 
+```
+cosign attest -predicate result.spdx -key cosign.key xxradar/hackon:latest
+```
